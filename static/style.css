@@ -1,0 +1,181 @@
+:root {
+    --primary-color: #6200ee;
+    --secondary-color: #03dac6;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --on-surface-color: #ffffff;
+    --error-color: #cf6679;
+    --success-color: #00c853;
+}
+
+body, h1, h2, p, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--on-surface-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: var(--on-surface-color);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.image-downloader {
+    background: var(--surface-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.image-downloader:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: var(--success-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--on-surface-color);
+}
+
+input[type="text"], input[type="number"], input[type="email"] {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--on-surface-color);
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: #7c4dff;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#result {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--success-color);
+}
+
+#downloadLink {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+#downloadLink:hover {
+    color: #00ffeb;
+}
+
+footer {
+    background: var(--surface-color);
+    color: var(--on-surface-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+#waitingMessage {
+    font-size: 1rem;
+    color: var(--on-surface-color);
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+    
+    .image-downloader {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
